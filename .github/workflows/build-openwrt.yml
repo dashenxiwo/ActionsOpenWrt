@@ -119,6 +119,17 @@ jobs:
         cd openwrt
         pwd
         ls
+        echo 输出feeds
+        ls feeds
+        echo 删除垃圾
+        rm -rf feeds/luci/applications/luci-app-adbyby-plus
+        rm -rf feeds/luci/applications/luci-app-unblockmusic
+        rm -rf feeds/luci/themes/luci-theme-argon
+        cd feeds/luci/themes/
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+        make menuconfig #choose LUCI->Theme->Luci-theme-argon
+        make -j1 V=s
+        
         echo "开始下载包"
         make defconfig
         make download -j8
