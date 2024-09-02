@@ -73,6 +73,10 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        df -h
+        sudo mkdir -p /build_dir
+        sudo chown $USER:$GROUPS /build_dir
+        ln -sf /build_dir $GITHUB_WORKSPACE/openwrt/build_dir
 
     - name: Load custom feeds
       run: |
