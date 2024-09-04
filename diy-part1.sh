@@ -32,4 +32,6 @@ ls
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 #echo '取消bootstrap主题'
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
-
+# Set Argon as default theme in LuCI configuration
+echo '设置argon主题'
+sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/" feeds/luci/modules/luci-base/root/etc/config/luci
