@@ -15,14 +15,14 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-cd package
-mkdir openwrt-packages
-cd openwrt-packages
-git clone https://github.com/fw876/helloworld.git
-cd helloworld
-mv * ../
-cd ../
-ls
+# cd package
+# mkdir openwrt-packages
+# cd openwrt-packages
+# git clone https://github.com/fw876/helloworld.git
+# cd helloworld
+# mv * ../
+# cd ../
+# ls
 # cd package/lean  
 # rm -rf luci-theme-argon  
 # git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  
@@ -33,5 +33,8 @@ ls
 #echo '取消bootstrap主题'
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 # Set Argon as default theme in LuCI configuration
-echo '设置argon主题'
-sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/" feeds/luci/modules/luci-base/root/etc/config/luci
+# echo '设置argon主题'
+# sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/" feeds/luci/modules/luci-base/root/etc/config/luci
+
+sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
