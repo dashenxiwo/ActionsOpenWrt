@@ -38,5 +38,5 @@
 
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
-# 使用更稳定的 OpenAppFilter 源
-sed -i '$a src-git OpenAppFilter https://github.com/lvqier/OpenAppFilter' feeds.conf.default
+# 使用 Lienol 的软件包源，包含 OpenAppFilter
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
