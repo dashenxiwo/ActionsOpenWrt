@@ -37,6 +37,5 @@
 # sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/" feeds/luci/modules/luci-base/root/etc/config/luci
 
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # 使用 Lienol 的软件包源，包含 OpenAppFilter
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
